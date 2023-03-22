@@ -26,7 +26,13 @@ function ContactList() {
     setContactos(temptask)
   }
 
-
+  const removeContact = (contacto) =>{
+    const index = contactos.indexOf(contacto)
+    const temptask = [...contactos]
+    temptask.splice(index,1)
+    setContactos(temptask)
+    console.log(Object.values(contactos))
+  }
 
   
   return (
@@ -58,6 +64,7 @@ function ContactList() {
                     key={index} 
                     contact={contact} 
                     changeState={changeState}
+                    removeContact={removeContact}
                     ></Contact>
                   
             )})}
